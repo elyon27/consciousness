@@ -1,13 +1,24 @@
 The Netlify deploy errored, with the following guidance provided:
 
-**Diagnosis**
+Diagnosis  
+- The build fails while cloning the repo because the submodule `img` has no URL configured in `.gitmodules`, so Git cannot initialize it during the checkout stage ([line 9](#L9)). This aborts the build before dependencies are installed.
 
-The build never started because the deploy could not clone the repository. The failure is reported at [line 8](#L8): “Unable to access repository. The repository may have been deleted, the branch may not exist…”.
-
-**Solution**
-
-1. Verify that the repository `elyon27/consciousness` still exists on GitHub and that Netlify has permission to access it (for private repos, re-authorize Netlify or add the deploy key).
-2. Confirm that the branch configured for the build is correct and still exists. If the default branch was renamed (e.g., from `master` to `main`), update the Netlify build settings to point to the correct branch.
+Solution  
+1. Verify that the `img` submodule actually exists in your repository or that you intend to track it.  
+2. If you need the submodule, add its URL to `.gitmodules` and commit the change:
+   ```bash
+   git submodule add <SUBMODULE_URL> img
+   git commit -am "Fix img submodule URL"
+   ```
+   Then push the commit and trigger a new Netlify build.  
+3. If the submodule is no longer needed, remove every reference to it:
+   ```bash
+   git submodule deinit -f img
+   rm -rf .git/modules/img
+   git rm -f img
+   git commit -am "Remove img submodule"
+   ```
+   Push the changes and retry the build.
 
 The relevant error logs are:
 
@@ -18,5 +29,9 @@ Line 3: Failed to fetch cache, continuing with build
 Line 4: Starting to prepare the repo for build
 Line 5: No cached dependencies found. Cloning fresh repo
 Line 6: git clone --filter=blob:none https://github.com/elyon27/consciousness
-Line 7: Preparing Git Reference refs/heads/master
+Line 7: Preparing Git Reference refs/heads/main
 Line 8: Failed during stage 'preparing repo': Unable to access repository. The repository may have been deleted, the branch may not exis
+Line 9: Error checking out submodules: fatal: No url found for submodule path 'img' in .gitmodules
+: exit status 128
+Line 10: Failing build: Failed to prepare repo
+Line 11: Finished processing build request in 1.087s
