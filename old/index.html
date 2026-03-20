@@ -1,0 +1,250 @@
+export default function ConsciousnessBooksSite() {
+  const books = [
+    {
+      id: "01",
+      title: "Neuroscience of Consciousness",
+      subtitle: "The brain, awareness, and the architecture of experience",
+      description:
+        "Explore how neural networks, perception, memory, and self-awareness contribute to conscious experience. This volume introduces major scientific theories and the biological foundations of the mind.",
+      category: "Science",
+      price: "$12.99",
+    },
+    {
+      id: "02",
+      title: "Consciousness and Artificial Intelligence",
+      subtitle: "Can machines become aware?",
+      description:
+        "A reflective study on the relationship between intelligence, computation, sentience, and personhood. This book examines whether artificial systems can simulate or genuinely possess consciousness.",
+      category: "AI & Philosophy",
+      price: "$12.99",
+    },
+    {
+      id: "03",
+      title: "Eastern and Western Perspective of Consciousness",
+      subtitle: "A dialogue between traditions of mind and being",
+      description:
+        "Compare classical Western philosophy, modern psychology, and Eastern contemplative traditions in their approaches to selfhood, awareness, transcendence, and liberation.",
+      category: "Comparative Thought",
+      price: "$12.99",
+    },
+    {
+      id: "04",
+      title: "Dream Consciousness",
+      subtitle: "The mystery of awareness within the dream state",
+      description:
+        "Journey into dreams, lucid awareness, symbolism, subconscious processes, and the liminal space between waking and sleeping consciousness.",
+      category: "Dream Studies",
+      price: "$12.99",
+    },
+    {
+      id: "05",
+      title: "Consciousness and Quantum Physics",
+      subtitle: "Observation, reality, and the limits of material certainty",
+      description:
+        "Investigate how quantum questions have influenced debates about reality, perception, observer effects, and the possible relationship between consciousness and the physical universe.",
+      category: "Physics & Metaphysics",
+      price: "$12.99",
+    },
+    {
+      id: "06",
+      title: "Animal Consciousness",
+      subtitle: "Awareness beyond the human sphere",
+      description:
+        "An examination of perception, emotion, memory, learning, communication, and the moral implications of consciousness in animals across species.",
+      category: "Ethics & Biology",
+      price: "$12.99",
+    },
+    {
+      id: "07",
+      title: "Consciousness and Altered States",
+      subtitle: "Mystical, meditative, and transformed modes of awareness",
+      description:
+        "Study meditative states, ecstatic experiences, psychological thresholds, and altered modes of perception to understand the broader spectrum of human consciousness.",
+      category: "Inner States",
+      price: "$12.99",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+      <header className="border-b border-white/10 bg-black/30 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.35em] text-cyan-300/80">CrownMind Institute</p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">Consciousness Books</h1>
+            <p className="mt-2 max-w-2xl text-sm text-zinc-400 md:text-base">
+              A dedicated digital shelf for the seven-volume Consciousness series — bringing together science,
+              philosophy, spirituality, and inquiry into the mystery of awareness.
+            </p>
+          </div>
+
+          <nav className="flex flex-wrap gap-3 text-sm">
+            <a href="#collection" className="rounded-full border border-white/10 px-4 py-2 hover:bg-white/5">Collection</a>
+            <a href="#mission" className="rounded-full border border-white/10 px-4 py-2 hover:bg-white/5">Mission</a>
+            <a href="#about" className="rounded-full border border-white/10 px-4 py-2 hover:bg-white/5">About</a>
+            <a href="#contact" className="rounded-full bg-cyan-400 px-4 py-2 font-medium text-black hover:opacity-90">Get Updates</a>
+          </nav>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.16),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.16),transparent_35%)]" />
+        <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-xs uppercase tracking-[0.3em] text-cyan-200">
+                Seven-Book Series
+              </p>
+              <h2 className="mt-6 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
+                Enter the inquiry into mind, awareness, reality, and the nature of being.
+              </h2>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
+                This site presents a structured collection of books on consciousness for readers, researchers,
+                contemplatives, and seekers who want to study the human mind from multiple dimensions.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#collection" className="rounded-2xl bg-cyan-400 px-6 py-3 font-medium text-black shadow-lg shadow-cyan-400/20 hover:opacity-90">
+                  View the Collection
+                </a>
+                <a href="#mission" className="rounded-2xl border border-white/10 px-6 py-3 font-medium hover:bg-white/5">
+                  Read the Mission
+                </a>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {books.slice(0, 4).map((book) => (
+                <div
+                  key={book.id}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl shadow-black/20 backdrop-blur"
+                >
+                  <div className="text-xs uppercase tracking-[0.25em] text-cyan-300/80">Vol. {book.id}</div>
+                  <h3 className="mt-3 text-lg font-semibold leading-snug">{book.title}</h3>
+                  <p className="mt-2 text-sm text-zinc-400">{book.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="collection" className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Book Collection</p>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">The Seven Books of Consciousness</h2>
+          </div>
+          <p className="max-w-2xl text-sm leading-6 text-zinc-400 md:text-base">
+            Each volume approaches consciousness through a distinct doorway, creating a coherent library that can be
+            studied individually or as a complete series.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {books.map((book) => (
+            <article
+              key={book.id}
+              className="group rounded-[28px] border border-white/10 bg-zinc-900/80 p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-400/30"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-cyan-200">
+                  Vol. {book.id}
+                </span>
+                <span className="text-sm font-medium text-zinc-300">{book.price}</span>
+              </div>
+              <h3 className="mt-5 text-2xl font-semibold leading-tight">{book.title}</h3>
+              <p className="mt-3 text-sm font-medium text-cyan-200/90">{book.subtitle}</p>
+              <p className="mt-4 text-sm leading-7 text-zinc-400">{book.description}</p>
+              <div className="mt-6 flex items-center justify-between">
+                <span className="text-xs uppercase tracking-[0.25em] text-zinc-500">{book.category}</span>
+                <button className="rounded-xl border border-white/10 px-4 py-2 text-sm font-medium transition group-hover:bg-white/5">
+                  View Book
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="mission" className="border-y border-white/10 bg-white/[0.03]">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-[32px] border border-white/10 bg-zinc-900/80 p-8">
+              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Mission</p>
+              <h2 className="mt-4 text-3xl font-semibold">Why this site exists</h2>
+              <p className="mt-5 text-base leading-8 text-zinc-300">
+                The Consciousness site is designed as a focused publishing space under the wider CrownMind mission.
+                It gathers the most important themes in consciousness studies into one unified collection so readers can
+                engage science, philosophy, spirituality, and inner experience in an ordered way.
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-zinc-900/80 p-8">
+              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Future Use</p>
+              <h2 className="mt-4 text-3xl font-semibold">Built for growth</h2>
+              <p className="mt-5 text-base leading-8 text-zinc-300">
+                This structure can later support book detail pages, direct checkout buttons, audiobook editions,
+                author notes, downloadable study guides, and a dedicated mailing list for readers interested in the
+                consciousness series.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">About the Series</p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">A multidisciplinary path into consciousness</h2>
+          </div>
+          <div className="space-y-5 text-base leading-8 text-zinc-300">
+            <p>
+              Consciousness remains one of the deepest mysteries in science, philosophy, and spiritual reflection. This
+              series approaches the subject through the biological, technological, comparative, symbolic, physical,
+              animal, and altered-state dimensions of inquiry.
+            </p>
+            <p>
+              The result is not a single narrow definition, but a layered study of awareness as lived experience,
+              scientific question, and philosophical frontier.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-4xl px-6 pb-20">
+        <div className="rounded-[32px] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-zinc-900 to-purple-500/10 p-8 md:p-10">
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Reader Circle</p>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Receive updates on the Consciousness collection</h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300">
+            Add your email signup form, Gumroad links, or direct store buttons here when you are ready to launch the
+            full book series online.
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-3 text-sm text-white outline-none placeholder:text-zinc-500"
+            />
+            <button className="rounded-2xl bg-cyan-400 px-6 py-3 font-medium text-black hover:opacity-90">
+              Join Updates
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-medium">Consciousness Books</p>
+            <p className="text-sm text-zinc-500">A CrownMind Institute publishing site</p>
+          </div>
+          <p className="max-w-2xl text-sm leading-6 text-zinc-500 md:text-right">
+            This site can be expanded into a full storefront with book pages, downloads, author profiles, and mission
+            support pathways.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}

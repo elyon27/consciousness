@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consciousness Books | CrownMind Institute</title>
+  <meta name="description" content="A seven-book Consciousness series by CrownMind Institute exploring neuroscience, AI, dreams, quantum physics, animal awareness, altered states, and comparative perspectives." />
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.1);
+      --text: #eef4ff;
+      --muted: #a8b3c9;
+      --line: rgba(255,255,255,0.12);
+      --accent: #5eead4;
+      --accent-2: #c084fc;
+      --gold: #f6c560;
+      --max: 1200px;
+      --radius: 24px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(94,234,212,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(192,132,252,0.12), transparent 26%),
+        linear-gradient(180deg, #07111e 0%, #0a0f1a 55%, #08131f 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(6,10,18,0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 16px 0;
+    }
+
+    .brand-kicker {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .36em; color: #93f7ea;
+    }
+
+    .brand-title { margin: 4px 0 0; font-size: 22px; font-weight: 700; }
+
+    .nav-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .nav-links a,
+    .btn-outline,
+    .btn-solid {
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+
+    .nav-links a,
+    .btn-outline {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .nav-links a:hover,
+    .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+    .btn-solid {
+      background: linear-gradient(135deg, var(--accent), #8ef9e5);
+      color: #04121a; font-weight: 700; box-shadow: 0 16px 40px rgba(94,234,212,0.18);
+    }
+
+    .btn-solid:hover { transform: translateY(-1px); }
+
+    .hero { padding: 88px 0 54px; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.08fr .92fr; gap: 34px; align-items: center;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid rgba(94,234,212,0.18);
+      background: rgba(94,234,212,0.08);
+      color: #b8fff5;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .28em;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p.lead {
+      max-width: 760px;
+      margin: 22px 0 0;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+    .intro-card-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px;
+    }
+
+    .mini-card,
+    .book-card,
+    .section-card,
+    .support-box,
+    .footer-panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card { padding: 18px; }
+    .mini-card span {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .26em; color: #9ef2e8;
+    }
+    .mini-card h3 { margin: 14px 0 0; font-size: 18px; line-height: 1.35; }
+    .mini-card p { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+
+    section { padding: 34px 0 30px; }
+
+    .section-head {
+      display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: end; margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      font-size: 12px; text-transform: uppercase; letter-spacing: .32em; color: #9ef2e8;
+    }
+
+    h2 { margin: 10px 0 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.16; }
+    .section-copy { color: var(--muted); font-size: 16px; line-height: 1.9; }
+
+    .book-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;
+    }
+
+    .book-card { padding: 22px; display: flex; flex-direction: column; }
+    .book-top {
+      padding: 18px; border-radius: 22px;
+      background: linear-gradient(135deg, rgba(94,234,212,0.14), rgba(192,132,252,0.10));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .book-meta {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      font-size: 12px; text-transform: uppercase; letter-spacing: .24em;
+    }
+
+    .tag {
+      display: inline-block; padding: 7px 10px; border-radius: 999px;
+      border: 1px solid rgba(94,234,212,0.16); background: rgba(94,234,212,0.08); color: #bafff7;
+      font-size: 11px; text-transform: uppercase; letter-spacing: .2em;
+    }
+
+    .price { font-size: 14px; font-weight: 700; color: #f7f8fe; }
+    .book-card h3 { margin: 16px 0 0; font-size: 28px; line-height: 1.18; }
+    .book-card .subtitle { margin: 10px 0 0; color: #ccf5ef; font-size: 14px; }
+    .book-card .desc { margin: 16px 0 0; color: var(--muted); font-size: 15px; line-height: 1.85; }
+
+    .book-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+    .path-grid,
+    .mission-grid,
+    .footer-grid { display: grid; gap: 20px; }
+    .path-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .mission-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .footer-grid { grid-template-columns: .68fr 1.32fr; align-items: center; }
+
+    .section-card,
+    .support-box,
+    .footer-panel { padding: 28px; }
+
+    .section-card h3,
+    .support-box h3 { margin: 14px 0 0; font-size: 28px; }
+    .section-card p,
+    .support-box p,
+    .footer-panel p { color: var(--muted); line-height: 1.9; }
+
+    .support-wrap {
+      background: linear-gradient(145deg, rgba(94,234,212,0.11), rgba(12,16,28,0.86), rgba(192,132,252,0.12));
+      border: 1px solid rgba(94,234,212,0.18);
+      border-radius: 34px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .support-layout {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: center;
+    }
+
+    .stack-list { display: grid; gap: 12px; }
+    .stack-list div {
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.18);
+      border-radius: 18px;
+      padding: 16px;
+      color: #dce6f8;
+    }
+
+    .form-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    input[type="email"] {
+      flex: 1 1 280px;
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.22);
+      color: var(--text);
+      border-radius: 18px;
+      padding: 15px 16px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .site-footer { border-top: 1px solid var(--line); padding: 18px 0 34px; }
+    .footer-note { text-align: right; }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .section-head,
+      .support-layout,
+      .footer-grid,
+      .mission-grid { grid-template-columns: 1fr; }
+      .book-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .path-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .nav-wrap { flex-direction: column; align-items: flex-start; }
+      .nav-links { width: 100%; }
+      .hero { padding-top: 56px; }
+      .intro-card-grid,
+      .book-grid,
+      .path-grid { grid-template-columns: 1fr; }
+      .brand-title { font-size: 20px; }
+      .book-card h3 { font-size: 24px; }
+      .footer-note { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div>
+        <div class="brand-kicker">CrownMind Institute</div>
+        <div class="brand-title">Consciousness Books</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#introduction">Introduction</a>
+        <a href="#collection">Collection</a>
+<!--    <a href="#individual-pages">Book Pages</a> -->
+        <a href="#mission">Mission</a>
+<!--    <a href="#contact">Reader Circle</a> -->
+      </nav>
+
+      <a class="btn-solid" href="#collection">Explore the Series</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="introduction">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">Main index.html</span>
+          <h1>What is consciousness?</h1>
+          <p class="lead">
+            Consciousness is the lived fact of awareness — the inward presence through which thought, sensation,
+            memory, identity, imagination, perception, and reflection become knowable. It stands at the intersection
+            of neuroscience, philosophy, contemplative inquiry, artificial intelligence, dream study, physics, and the
+            mystery of subjective experience itself. This site serves as the central gateway to a seven-book series that
+            examines consciousness from complementary angles, allowing readers to move from foundational questions to
+            deeper and more specialized explorations.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-solid" href="#collection">View the 7 Books</a>
+ <!--       <a class="btn-outline" href="#individual-pages">Open Individual Book Pages</a> -->
+          </div>
+        </div>
+
+        <div class="intro-card-grid">
+          <article class="mini-card">
+            <span>Science</span>
+            <h3>Brain, mind, and awareness</h3>
+            <p>Study consciousness through neural activity, perception, memory, attention, and selfhood.</p>
+          </article>
+          <article class="mini-card">
+            <span>Inquiry</span>
+            <h3>Philosophical depth</h3>
+            <p>Engage the hard problem, subjectivity, identity, and the limits of material explanation.</p>
+          </article>
+          <article class="mini-card">
+            <span>Experience</span>
+            <h3>Dreams and altered states</h3>
+            <p>Explore how consciousness transforms in meditation, dreams, liminal states, and inner vision.</p>
+          </article>
+          <article class="mini-card">
+            <span>Frontier</span>
+            <h3>AI, animals, and physics</h3>
+            <p>Examine whether awareness may extend across machines, species, and deeper layers of reality.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="collection">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Book Collection</div>
+            <h2>The seven books of Consciousness</h2>
+          </div>
+          <div class="section-copy">
+            The main index page introduces the whole series, then directs readers to dedicated book pages where each
+            title can carry its own fuller description, cover art, and direct Gumroad purchase link.
+          </div>
+        </div>
+
+        <div class="book-grid">
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 01</span><span class="price">$12.99</span></div>
+                <h3>Neuroscience of Consciousness</h3>
+              <div class="subtitle">The brain, awareness, and the architecture of experience</div>
+            </div>
+            <p class="desc">Explore neural correlates, perception, memory, selfhood, attention, and the biological foundations                 that shape conscious experience.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/neuroscience-of-consciousness.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/neuroscienceofconsciousness" target="_blank"                            rel="noopener noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+          
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 02</span><span class="price">$12.99</span></div>
+                <h3>Consciousness and Artificial Intelligence</h3>
+              <div class="subtitle">Can machines become aware?</div>
+            </div>
+            <p class="desc">A reflective inquiry into intelligence, computation, simulation, sentience, personhood, and the                    boundaries between processing and awareness.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/consciousness-and-artificial-intelligence.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/consciousnessandai" target="_blank" rel="noopener                  noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 03</span><span class="price">$12.99</span></div>
+                <h3>Eastern and Western Perspective of Consciousness</h3>
+              <div class="subtitle">A dialogue between traditions of mind and being</div>
+            </div>
+            <p class="desc">Compare Western philosophy, psychology, and metaphysics with Eastern contemplative traditions                      on selfhood, awareness, transcendence, and liberation.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/eastern-and-western-perspective-of-consciousness.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/ewperspectiveonconsciousness" target="_blank"                  rel="noopener noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 04</span><span class="price">$12.99</span></div>
+                <h3>Dream Consciousness</h3>
+              <div class="subtitle">The mystery of awareness within the dream state</div>
+            </div>
+            <p class="desc">Enter the world of dreams, symbols, lucid awareness, subconscious processes, and the shifting                      borderland between waking and sleeping states.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/dream-consciousness.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/dreamconsciousness" target="_blank" rel="noopener                  noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+    
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 05</span><span class="price">$12.99</span></div>
+                <h3>Consciousness and Quantum Physics</h3>
+              <div class="subtitle">Observation, reality, and the limits of material certainty</div>
+            </div>
+            <p class="desc">Investigate the philosophical implications of quantum theory for observation, reality, uncertainty,                and the role of the observer.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/consciousness-and-quantum-physics.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/consciousnessandquantumphysics" target="_blank"                  rel="noopener noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 06</span><span class="price">$12.99</span></div>
+                <h3>Animal Consciousness</h3>
+              <div class="subtitle">Awareness beyond the human sphere</div>
+            </div>
+            <p class="desc">Study perception, memory, emotion, communication, and moral consideration in the lives of animals                across species.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/animal-consciousness.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/animalconsciousness" target="_blank" rel="noopener                  noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-top">
+              <div class="book-meta"><span class="tag">Vol. 07</span><span class="price">$12.99</span></div>
+                <h3>Consciousness and Altered States</h3>
+              <div class="subtitle">Mystical, meditative, and transformed modes of awareness</div>
+            </div>
+            <p class="desc">Explore meditative states, ecstatic experiences, psychological thresholds, and altered forms of                perception across the spectrum of human awareness.</p>
+            <div class="book-actions">
+              <a class="btn-outline" href="books/consciousness-and-altered-states.html">Open Page</a>
+              <a class="btn-solid" href="https://bctenio27.gumroad.com/l/consciousnessandalteredstates" target="_blank"                  rel="noopener noreferrer">Buy On Gumroad</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!--
+    <section id="individual-pages">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Individual Pages</div>
+            <h2>Linked book pages for the series</h2>
+          </div>
+          <div class="section-copy">
+            The site is split into separate HTML files so each book can have its own dedicated page, its own future cover,
+            and its own direct product link.
+          </div>
+        </div>
+
+        <div class="path-grid">
+          <article class="section-card"><div class="eyebrow">01</div><h3>index.html</h3><p>Main introduction page about consciousness and the seven-book collection.</p></article>
+          <article class="section-card"><div class="eyebrow">02</div><h3>books/neuroscience-of-consciousness.html</h3><p>Dedicated page for Volume 1.</p></article>
+          <article class="section-card"><div class="eyebrow">03</div><h3>books/consciousness-and-artificial-intelligence.html</h3><p>Dedicated page for Volume 2.</p></article>
+          <article class="section-card"><div class="eyebrow">04</div><h3>books/eastern-and-western-perspective-of-consciousness.html</h3><p>Dedicated page for Volume 3.</p></article>
+          <article class="section-card"><div class="eyebrow">05</div><h3>books/dream-consciousness.html</h3><p>Dedicated page for Volume 4.</p></article>
+          <article class="section-card"><div class="eyebrow">06</div><h3>books/consciousness-and-quantum-physics.html</h3><p>Dedicated page for Volume 5.</p></article>
+          <article class="section-card"><div class="eyebrow">07</div><h3>books/animal-consciousness.html</h3><p>Dedicated page for Volume 6.</p></article>
+          <article class="section-card"><div class="eyebrow">08</div><h3>books/consciousness-and-altered-states.html</h3><p>Dedicated page for Volume 7.</p></article>
+        </div>
+      </div>
+    </section>
+
+-->
+
+    <section id="mission">
+      <div class="container mission-grid">
+        <article class="section-card">
+          <div class="eyebrow">Mission</div>
+          <h3>Why this site exists</h3>
+          <p>
+            Consciousness Books is designed as a focused publishing branch within the wider CrownMind vision. It gives
+            readers one dedicated place to explore the mystery of awareness through science, philosophy, comparative
+            thought, dream inquiry, physics, animal studies, and altered states.
+          </p>
+        </article>
+        <article class="section-card">
+          <div class="eyebrow">Purpose</div>
+          <h3>Publishing with direction</h3>
+          <p>
+            Every CrownMind Institute publication is created with a purpose. Through the support of readers and
+            learners, the proceeds from these works help fund the future development of Transformation Houses — places
+            dedicated to renewal, formation, and service for generations to come.
+          </p>
+        </article>
+      </div>
+    </section>
+
+<!--
+    <section id="contact">
+      <div class="container">
+        <div class="support-wrap">
+          <div class="support-layout">
+            <div>
+              <div class="eyebrow">Reader Circle</div>
+              <h2>Connect the site to your Gumroad and launch flow</h2>
+              <p class="section-copy">
+                Replace each placeholder Gumroad URL with your real product links. You can also connect this section to a
+                Netlify Form, Buttondown, Gumroad audience form, or your preferred email list provider.
+              </p>
+              <form class="form-row">
+                <input type="email" placeholder="Enter your email address" />
+                <button class="btn-solid" type="submit">Join Updates</button>
+              </form>
+            </div>
+            <div class="support-box">
+              <div class="eyebrow">Launch Stack</div>
+              <h3>Ready to connect</h3>
+              <div class="stack-list">
+                <div>Main index page introducing consciousness</div>
+                <div>Seven linked individual book pages</div>
+                <div>Direct Gumroad buttons for each volume</div>
+                <div>Mission note for Transformation Houses</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+-->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-panel">
+        <strong>Consciousness Books</strong>
+        <p>A CrownMind Institute publishing site</p>
+      </div>
+      <div class="footer-note">
+        Production structure prepared: main index.html, seven linked book pages, and Gumroad-ready buttons are all laid
+        out in this site bundle.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
