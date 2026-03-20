@@ -1,13 +1,13 @@
 The Netlify deploy errored, with the following guidance provided:
 
-Diagnosis:
-- The build stopped while cloning the repository because Git could not initialize the `img` submodule—`.gitmodules` lacks a URL for that submodule, so checkout fails at [line 8](#L8).
+**Diagnosis**
 
-Solution:
-1. Fix the submodule configuration locally:
-   - Either add the correct `[submodule "img"]` entry to `.gitmodules` with a valid `path` (`img`) and `url`, then run `git submodule sync --recursive` and commit the updated `.gitmodules` (and `.git/config` if needed).
-   - Or, if the submodule is no longer required, remove it by deleting the `img` entry from `.gitmodules`, running `git rm --cached img`, and committing the change.
-2. Push the updated commit to the repository so Netlify can clone it successfully on the next build.
+The build never started because the deploy could not clone the repository. The failure is reported at [line 8](#L8): “Unable to access repository. The repository may have been deleted, the branch may not exist…”.
+
+**Solution**
+
+1. Verify that the repository `elyon27/consciousness` still exists on GitHub and that Netlify has permission to access it (for private repos, re-authorize Netlify or add the deploy key).
+2. Confirm that the branch configured for the build is correct and still exists. If the default branch was renamed (e.g., from `master` to `main`), update the Netlify build settings to point to the correct branch.
 
 The relevant error logs are:
 
@@ -19,8 +19,4 @@ Line 4: Starting to prepare the repo for build
 Line 5: No cached dependencies found. Cloning fresh repo
 Line 6: git clone --filter=blob:none https://github.com/elyon27/consciousness
 Line 7: Preparing Git Reference refs/heads/master
-Line 8: Error checking out submodules: fatal: No url found for submodule path 'img' in .gitmodules
-: exit status 128
-Line 9: Failed during stage 'preparing repo': Unable to access repository. The repository may have been deleted, the branch may not exis
-Line 10: Failing build: Failed to prepare repo
-Line 11: Finished processing build request in 1.134s
+Line 8: Failed during stage 'preparing repo': Unable to access repository. The repository may have been deleted, the branch may not exis
